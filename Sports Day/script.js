@@ -118,3 +118,41 @@ startBtn.addEventListener("click", () => {
     .then(AwardCeremony)
     .catch(err => log("Error: " + err));
 });
+
+
+/*
+JavaScript Logic (Technical Overview)
+
+1. Event Trigger
+   - A click event listener starts the sports day execution.
+
+2. Opening Ceremony
+   - Executed first using a Promise.
+   - Uses setInterval for timed logs.
+   - Initializes and resolves with the score object.
+
+3. Race100M
+   - Triggered via promise chaining (.then()).
+   - Uses setTimeout to simulate delay.
+   - Generates random race times.
+   - Awards points to the top two teams.
+   - Resolves with updated scores.
+
+4. Long Jump
+   - Executed after Race100M.
+   - Randomly selects a team and awards points.
+   - Resolves with updated scores.
+
+5. High Jump
+   - Prompts user input.
+   - Validates input and updates score if valid.
+   - Resolves with updated scores.
+
+6. Award Ceremony
+   - Sorts teams based on final scores.
+   - Announces winners.
+
+7. Flow Control
+   - Each function returns a Promise.
+   - Sequential execution is ensured using .then() chaining.
+*/
