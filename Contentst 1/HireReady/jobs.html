@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - HireReady</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">HireReady</a>
+                
+                <nav class="nav-menu">
+                    <a href="index.html">Home</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="company.html">Companies</a>
+                    <a href="#">Post a Job</a>
+                </nav>
+                
+                <a href="auth.html" class="btn btn-primary">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Jobs Page Content -->
+    <main class="container">
+        <h1>Find Your Dream Job</h1>
+        
+        <div class="jobs-layout">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-group">
+                    <h3>Location</h3>
+                    <label><input type="checkbox"> Remote</label>
+                    <label><input type="checkbox"> On-site</label>
+                    <label><input type="checkbox"> Hybrid</label>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Experience Level</h3>
+                    <label><input type="checkbox"> Entry Level</label>
+                    <label><input type="checkbox"> Mid Level</label>
+                    <label><input type="checkbox"> Senior Level</label>
+                    <label><input type="checkbox"> Executive</label>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Job Type</h3>
+                    <label><input type="checkbox"> Full-time</label>
+                    <label><input type="checkbox"> Part-time</label>
+                    <label><input type="checkbox"> Contract</label>
+                    <label><input type="checkbox"> Internship</label>
+                </div>
+                
+                <div class="filter-group">
+                    <h3>Salary Range</h3>
+                    <label><input type="checkbox"> $30k - $50k</label>
+                    <label><input type="checkbox"> $50k - $70k</label>
+                    <label><input type="checkbox"> $70k - $90k</label>
+                    <label><input type="checkbox"> $90k+</label>
+                </div>
+            </aside>
+            
+            <!-- Job Listings -->
+            <section class="job-listings">
+                <div class="job-cards-grid">
+                    <!-- Job Card 1 -->
+                    <div class="job-card">
+                        <h3>Senior Frontend Developer</h3>
+                        <p class="company-name">TechCorp Inc.</p>
+                        <p class="salary">$90,000 - $120,000</p>
+                        <div class="job-details">
+                            <span class="badge">Remote</span>
+                            <span class="badge">Full-time</span>
+                            <span class="badge">Senior</span>
+                        </div>
+                        <p class="job-description">We are looking for an experienced frontend developer to join our team...</p>
+                        <a href="job-detail.html" class="btn btn-primary">View Details</a>
+                    </div>
+                    
+                    <!-- Job Card 2 -->
+                    <div class="job-card">
+                        <h3>Product Manager</h3>
+                        <p class="company-name">InnovateX</p>
+                        <p class="salary">$100,000 - $130,000</p>
+                        <div class="job-details">
+                            <span class="badge">Hybrid</span>
+                            <span class="badge">Full-time</span>
+                            <span class="badge">Mid Level</span>
+                        </div>
+                        <p class="job-description">Join our product team to drive innovation and growth...</p>
+                        <a href="job-detail.html" class="btn btn-primary">View Details</a>
+                    </div>
+                    
+                    <!-- Job Card 3 -->
+                    <div class="job-card">
+                        <h3>Data Scientist</h3>
+                        <p class="company-name">DataDriven Co.</p>
+                        <p class="salary">$110,000 - $140,000</p>
+                        <div class="job-details">
+                            <span class="badge">On-site</span>
+                            <span class="badge">Full-time</span>
+                            <span class="badge">Senior</span>
+                        </div>
+                        <p class="job-description">Analyze complex datasets to drive business insights...</p>
+                        <a href="job-detail.html" class="btn btn-primary">View Details</a>
+                    </div>
+                    
+                    <!-- Job Card 4 -->
+                    <div class="job-card">
+                        <h3>UX/UI Designer</h3>
+                        <p class="company-name">DesignHub</p>
+                        <p class="salary">$75,000 - $95,000</p>
+                        <div class="job-details">
+                            <span class="badge">Remote</span>
+                            <span class="badge">Contract</span>
+                            <span class="badge">Mid Level</span>
+                        </div>
+                        <p class="job-description">Create beautiful and intuitive user experiences...</p>
+                        <a href="job-detail.html" class="btn btn-primary">View Details</a>
+                    </div>
+                    
+                    <!-- Job Card 5 -->
+                    <div class="job-card">
+                        <h3>Backend Engineer</h3>
+                        <p class="company-name">ServerStack</p>
+                        <p class="salary">$95,000 - $125,000</p>
+                        <div class="job-details">
+                            <span class="badge">Hybrid</span>
+                            <span class="badge">Full-time</span>
+                            <span class="badge">Senior</span>
+                        </div>
+                        <p class="job-description">Build scalable backend systems and APIs...</p>
+                        <a href="job-detail.html" class="btn btn-primary">View Details</a>
+                    </div>
+                    
+                    <!-- Job Card 6 -->
+                    <div class="job-card">
+                        <h3>DevOps Specialist</h3>
+                        <p class="company-name">CloudFirst</p>
+                        <p class="salary">$105,000 - $135,000</p>
+                        <div class="job-details">
+                            <span class="badge">Remote</span>
+                            <span class="badge">Full-time</span>
+                            <span class="badge">Senior</span>
+                        </div>
+                        <p class="job-description">Manage cloud infrastructure and deployment pipelines...</p>
+                        <a href="job-detail.html" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="page-btn active">1</a>
+                    <a href="#" class="page-btn">2</a>
+                    <a href="#" class="page-btn">3</a>
+                    <a href="#" class="page-btn">Next</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HireReady</h3>
+                    <p>Connecting talented professionals with great companies.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                        <li><a href="company.html">Companies</a></li>
+                        <li><a href="#">Post a Job</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HireReady. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
