@@ -7,7 +7,9 @@ function App() {
 
   return (
     <>
-      <Card name="Ansh" />
+     {/* props use this is how done */}
+      <Card name="Ansh" /> 
+     
        
          
        
