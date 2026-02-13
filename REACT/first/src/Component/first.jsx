@@ -1,7 +1,7 @@
-function Card(){
+function Card({name}){
     return(
         <>
-        
+        <h1>Hiii {name}</h1>
         </>
     )
 }
