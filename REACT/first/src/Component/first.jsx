@@ -1,3 +1,5 @@
+//react porps use 
+
 function Card({name}){
     return(
         <>
