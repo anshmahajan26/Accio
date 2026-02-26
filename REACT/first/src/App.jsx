@@ -10,7 +10,7 @@ function App() {
      {/* props use this is how done */}
       <Card name="Ansh" /> 
       <Card name="Om" />
-      <Card name = "" />
+      
        
          
        
