@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import React from 'react'
 
-const Search = () => {
+const Search = ({ setWeatherDetails }) => {
     const [search, setSearch] = useState("");
+    const apiKey = import.meta.env.VITE_API_KEY;
 
     const handleInput = (e) =>{
         setSearch(e.target.value);
@@ -15,7 +16,7 @@ const Search = () => {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': 'YOUR_KEY',
+            'x-rapidapi-key': apiKey,
             'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com'
         }
     };
@@ -23,6 +24,7 @@ const Search = () => {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
+        setWeatherDetails(result);
         console.log(result);
     } catch (error) {
         console.error(error);
