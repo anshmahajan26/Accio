@@ -3,6 +3,7 @@ import React from 'react'
 
 const Search = ({ setWeatherDetails }) => {
     const [search, setSearch] = useState("");
+    //this is to access api key from .env file
     const apiKey = import.meta.env.VITE_API_KEY;
 
     const handleInput = (e) =>{
