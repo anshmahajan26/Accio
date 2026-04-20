@@ -9,6 +9,7 @@ const Search = ({ setWeatherDetails }) => {
     const handleInput = (e) =>{
         setSearch(e.target.value);
     }
+    console.log(apiKey);
    const handleKeyDown = async (e) => {
     if (e.key !== "Enter") return;
     if (!search.trim()) return;
