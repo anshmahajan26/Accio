@@ -8,12 +8,39 @@ const Search = () => {
         setSearch(e.target.value);
     }
     const handleKeyDown = (e)=>{
-        if(e.key == 'Enter') {
-            console.log("Entere done yaya");
-        }
+        if(e.key != 'Enter') return;
+        //for api calls we do this
+      const http = require('https');
+
+const options = {
+	method: 'GET',
+	hostname: 'weatherapi-com.p.rapidapi.com',
+	port: null,
+	path: '/current.json?q=53.1%2C-0.13',
+	headers: {
+		'x-rapidapi-key': 'c282a508aamshec1967001d06d7fp1bededjsn3dc8f0ed78a4',
+		'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
+
+const req = http.request(options, function (res) {
+	const chunks = [];
+
+	res.on('data', function (chunk) {
+		chunks.push(chunk);
+	});
+
+	res.on('end', function () {
+		const body = Buffer.concat(chunks);
+		console.log(body.toString());
+	});
+});
+
+req.end();
     }
 
-    console.log('search',search);
+    //console.log('search',search);
     return (
         <>
             <div>
