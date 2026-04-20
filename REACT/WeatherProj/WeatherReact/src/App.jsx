@@ -12,7 +12,7 @@ function App() {
     <>
       <Header/>
       <Search setWeatherDetails={setWeatherDetails}/>
-      {weatherDetails && <WeatherCard/>}
+      {weatherDetails && <WeatherCard weatherDetails={weatherDetails}/>}
       
       <Footer/>
     </>
