@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WeatherCard =({ weatherDetails })=>{
+const WeatherCard = ({ weatherDetails }) => {
     const location = weatherDetails?.location;
     const current = weatherDetails?.current;
 
@@ -8,15 +8,15 @@ const WeatherCard =({ weatherDetails })=>{
         return null;
     }
 
-    return(
+    return (
         <>
-        <div>
-         <h2>{location.name}, {location.country}</h2>
-         <p>{current.condition.text}</p>
-         <p>Temp: {current.temp_c} C</p>
-         <p>Humidity: {current.humidity}%</p>
-        </div>
-        
+            <div>
+                <h2>{location.name}, {location.country}</h2>
+                <p>{current.condition.text}</p>
+                <p>Temp: {current.temp_c} C</p>
+                <p>Humidity: {current.humidity}%</p>
+            </div>
+
         </>
     )
 }
