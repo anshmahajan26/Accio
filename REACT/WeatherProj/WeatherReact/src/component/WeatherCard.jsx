@@ -10,7 +10,7 @@ const WeatherCard = ({ weatherDetails }) => {
 
     return (
         <>
-            <div style={{}}>
+            <div style={{color:red,}}>
                 <h2>{location.name}, {location.country}</h2>
                 <p>{current.condition.text}</p>
                 <p>Temp: {current.temp_c} C</p>
