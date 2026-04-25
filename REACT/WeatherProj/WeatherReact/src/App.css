@@ -7,4 +7,5 @@ body{
     color:white;
     max-width: 100wh;
     min-height: 100vh;
+    background-color: linear-gradient;
 }
