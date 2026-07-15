@@ -56,3 +56,38 @@ export default App;
 // }
 
 // export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+import { useRef, useState } from "react";
+
+function App() {
+  const countRef = useRef(0);
+  const [, setRender] = useState(0);
+
+  const handleIncrement = () => {
+    countRef.current++;
+    setRender(prev => prev + 1); // Force re-render
+  };
+
+  return (
+    <div>
+      <h2>Count: {countRef.current}</h2>
+
+      <button onClick={handleIncrement}>
+        Increment
+      </button>
+    </div>
+  );
+}
+
+export default App;
