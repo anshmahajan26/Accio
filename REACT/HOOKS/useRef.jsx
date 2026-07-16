@@ -18,6 +18,7 @@ function App() {
 export default App;
 
 
+//stopo watch timer
 
 // import { useRef, useState } from "react";
 
@@ -67,7 +68,7 @@ export default App;
 
 
 
-
+//counter
 import { useRef, useState } from "react";
 
 function App() {
