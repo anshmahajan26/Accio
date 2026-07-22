@@ -1,11 +1,17 @@
 const http = require("http");
+const url = require("url");
 
 const server = http.createServer((req, res) => {
 
-    if (req.url === "/") {
+    const data = url.parse(req.url, true);
+
+    // Home Page
+    if (data.pathname === "/") {
+
+        res.writeHead(200, { "Content-Type": "text/html" });
 
         res.end(`
-            <h1>Simple Calculator</h1>
+            <h1>Calculator</h1>
 
             <a href="/add">Addition</a><br><br>
 
@@ -15,48 +21,130 @@ const server = http.createServer((req, res) => {
 
             <a href="/div">Division</a>
         `);
-
-    }
-     else if (req.url === "/add") {
-
-        let ans = 10 + 20;
-
-        res.end(`<h1>Addition = ${ans}</h1>`);
-
     }
 
-    else if (req.url === "/sub") {
+    // Addition Page
+    else if (data.pathname === "/add") {
 
-        let ans = 20 - 10;
+        let ans = "";
 
-        res.end(`<h1>Subtraction = ${ans}</h1>`);
+        if (data.query.num1 && data.query.num2) {
+            ans = Number(data.query.num1) + Number(data.query.num2);
+        }
 
+        res.end(`
+            <h1>Addition</h1>
+
+            <form>
+
+                Number 1 :
+                <input type="number" name="num1"><br><br>
+
+                Number 2 :
+                <input type="number" name="num2"><br><br>
+
+                <button type="submit">Calculate</button>
+
+            </form>
+
+            <h2>Answer : ${ans}</h2>
+
+            <a href="/">Home</a>
+        `);
     }
 
-    else if (req.url === "/mul") {
+    // Subtraction Page
+    else if (data.pathname === "/sub") {
 
-        let ans = 10 * 20;
+        let ans = "";
 
-        res.end(`<h1>Multiplication = ${ans}</h1>`);
+        if (data.query.num1 && data.query.num2) {
+            ans = Number(data.query.num1) - Number(data.query.num2);
+        }
 
+        res.end(`
+            <h1>Subtraction</h1>
+
+            <form>
+
+                Number 1 :
+                <input type="number" name="num1"><br><br>
+
+                Number 2 :
+                <input type="number" name="num2"><br><br>
+
+                <button type="submit">Calculate</button>
+
+            </form>
+
+            <h2>Answer : ${ans}</h2>
+
+            <a href="/">Home</a>
+        `);
     }
 
-    else if (req.url === "/div") {
+    // Multiplication Page
+    else if (data.pathname === "/mul") {
 
-        let ans = 20 / 10;
+        let ans = "";
 
-        res.end(`<h1>Division = ${ans}</h1>`);
+        if (data.query.num1 && data.query.num2) {
+            ans = Number(data.query.num1) * Number(data.query.num2);
+        }
 
+        res.end(`
+            <h1>Multiplication</h1>
+
+            <form>
+
+                Number 1 :
+                <input type="number" name="num1"><br><br>
+
+                Number 2 :
+                <input type="number" name="num2"><br><br>
+
+                <button type="submit">Calculate</button>
+
+            </form>
+
+            <h2>Answer : ${ans}</h2>
+
+            <a href="/">Home</a>
+        `);
     }
 
-    else {
+    // Division Page
+    else if (data.pathname === "/div") {
 
-        res.statusCode = 404;
-        res.end("<h1>Page Not Found</h1>");
+        let ans = "";
 
+        if (data.query.num1 && data.query.num2) {
+            ans = Number(data.query.num1) / Number(data.query.num2);
+        }
+
+        res.end(`
+            <h1>Division</h1>
+
+            <form>
+
+                Number 1 :
+                <input type="number" name="num1"><br><br>
+
+                Number 2 :
+                <input type="number" name="num2"><br><br>
+
+                <button type="submit">Calculate</button>
+
+            </form>
+
+            <h2>Answer : ${ans}</h2>
+
+            <a href="/">Home</a>
+        `);
     }
 
 });
+
 server.listen(3000, () => {
-    console.log("Server running at http://localhost:3000");
+    console.log("Server Running at http://localhost:3000");
 });
