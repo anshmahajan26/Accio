@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bgc">  
+    <button id="btn">theme</button>
+    <h1 id="time">0</h1>
+
+<button id="start">Start</button>
+
+<button id="stop">Stop</button>
+
+<button id="reset">Reset</button>
+
+<script>
+    let bgc=document.getElementById("bgc")
+    let btn=document.getElementById("btn")
+    let count=0
+    btn.addEventListener("click",()=>{
+        if(count==0){
+            bgc.style.backgroundColor="gray"
+        bgc.style.color="white"
+        count=1
+        }else{
+            bgc.style.backgroundColor="white"
+        bgc.style.color="black"
+        count=0
+        }
+    })
+
+
+    let seconds=0;
+
+let interval;
+
+const display=document.getElementById("time");
+
+document.getElementById("start").onclick=()=>{
+
+if(interval) return;
+
+interval=setInterval(()=>{
+
+seconds++;
+
+display.innerText=seconds;
+
+},1000);
+
+};
+
+document.getElementById("stop").onclick=()=>{
+
+clearInterval(interval);
+
+interval=null;
+
+};
+
+document.getElementById("reset").onclick=()=>{
+
+clearInterval(interval);
+
+interval=null;
+
+seconds=0;
+
+display.innerText=0;
+
+
+};
+</script>
+</body>
+</html>

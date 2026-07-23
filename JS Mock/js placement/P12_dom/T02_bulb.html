@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #light{
+            border: 5px solid black;
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+        }
+        #parent{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width:100%;
+        }
+        #button{
+            height: 25px;
+            width: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+      <div id="parent">
+        <div id="light"></div>
+          <button id="button">ON</button>
+      </div>
+
+    <script>
+        let bulb=document.querySelector("#light")
+        let button=document.querySelector("#button")
+         let ison=0
+        button.addEventListener("click",()=>{
+          
+           if(!ison){
+            bulb.style.backgroundColor="yellow"
+            button.textContent="OFF"
+            button.style.backgroundColor="red"
+            alert("light is on")
+            ison=1
+            
+           }else{
+             bulb.style.backgroundColor="white"
+             button.textContent="ON"
+             button.style.backgroundColor="green"
+             ison=0
+             alert("light is off")
+             
+           }
+           
+             
+        })
+    </script>
+</body>
+</html>
