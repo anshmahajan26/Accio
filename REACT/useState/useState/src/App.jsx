@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
 function App() {
   const [count,setCount]= useState(0);
@@ -11,6 +11,17 @@ function App() {
   function Decre(){
     setCount(count-1)
   }
+
+  useEffect(()=>{
+    //document.title =  `Count:${count}`;
+    const timer = setInterval(()=>{
+      console.log("Running");
+    },1000);
+    return ()=>{
+      clearInterval(timer);
+      console.log("done clear");
+    }
+  },[count]);
   return (
     <>
      <h1>{count}</h1>
