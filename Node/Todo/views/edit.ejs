@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Todo</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>Edit Task</h1>
+        
+        <!-- Edit Todo Form -->
+        <form action="/edit/<%= todo._id %>" method="POST" class="todo-form">
+            <input type="text" name="task" value="<%= todo.task %>" required autocomplete="off" autofocus>
+            <button type="submit">Save Changes</button>
+        </form>
+        
+        <div style="margin-top: 20px; text-align: center;">
+            <a href="/" class="back-link">← Back to Todo List</a>
+        </div>
+    </div>
+</body>
+</html>

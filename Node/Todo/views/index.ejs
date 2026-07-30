@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner-Friendly Todo App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>Todo List</h1>
+        
+        <!-- Add Todo Form -->
+        <form action="/add" method="POST" class="todo-form">
+            <input type="text" name="task" placeholder="Enter a new task..." required autocomplete="off">
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Todo Lists -->
+        <div class="task-sections">
+            <!-- Active/Pending Tasks -->
+            <div class="section">
+                <h2>Pending Tasks</h2>
+                <ul class="task-list">
+                    <% const pendingTodos = todos.filter(t => !t.completed); %>
+                    <% if (pendingTodos.length === 0) { %>
+                        <li class="empty-msg">No pending tasks!</li>
+                    <% } else { %>
+                        <% pendingTodos.forEach(todo => { %>
+                            <li class="task-item">
+                                <span class="task-text"><%= todo.task %></span>
+                                <div class="task-actions">
+                                    <form action="/toggle/<%= todo._id %>" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-btn btn-complete">Complete</button>
+                                    </form>
+                                    <a href="/edit/<%= todo._id %>" class="btn-btn btn-edit">Edit</a>
+                                    <form action="/delete/<%= todo._id %>" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-btn btn-delete">Delete</button>
+                                    </form>
+                                </div>
+                            </li>
+                        <% }) %>
+                    <% } %>
+                </ul>
+            </div>
+
+            <!-- Completed Tasks -->
+            <div class="section">
+                <h2>Completed Tasks</h2>
+                <ul class="task-list completed-list">
+                    <% const completedTodos = todos.filter(t => t.completed); %>
+                    <% if (completedTodos.length === 0) { %>
+                        <li class="empty-msg">No completed tasks yet.</li>
+                    <% } else { %>
+                        <% completedTodos.forEach(todo => { %>
+                            <li class="task-item">
+                                <span class="task-text completed-text"><%= todo.task %></span>
+                                <div class="task-actions">
+                                    <form action="/toggle/<%= todo._id %>" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-btn btn-undo">Undo</button>
+                                    </form>
+                                    <form action="/delete/<%= todo._id %>" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn-btn btn-delete">Delete</button>
+                                    </form>
+                                </div>
+                            </li>
+                        <% }) %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
