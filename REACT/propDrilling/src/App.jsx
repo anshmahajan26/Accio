@@ -1,11 +1,10 @@
-import GrandChild from "./Component/GrandChild"
+import Parent from "./Component/Parent"
 
 function App() {
   const name = "ansh"
   return (
     <>
       <Parent name={name} />
-      {/* <GrandChild /> */}
     </>
   )
 }
