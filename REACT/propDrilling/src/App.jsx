@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Parent name={name} />
-      <GrandChild />
+      {/* <GrandChild /> */}
     </>
   )
 }
