@@ -1,11 +1,10 @@
-import Child from "./Child"
-
+import Child from "./Child";
 function Parent(props) {
     return (
         <>
+
             <Child name={props.name} />
         </>
     )
 }
-
-export default Parent
+export default Parent;
