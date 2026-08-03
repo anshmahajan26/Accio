@@ -129,6 +129,7 @@ const server = http.createServer((req, res) => {
 
                 Number 1 :
                 <input type="number" name="num1"><br><br>
+                <br>
 
                 Number 2 :
                 <input type="number" name="num2"><br><br>
