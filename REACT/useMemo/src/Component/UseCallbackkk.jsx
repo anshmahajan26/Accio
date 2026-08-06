@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-function useCallbackkk(){
+function UseCallbackkk(){
  const [count, setCount] = useState(0);
     const [name, setName] = useState("Ansh");
 
@@ -22,4 +22,4 @@ function useCallbackkk(){
         </>
     )
 }
-export default useCallbackkk;
+export default UseCallbackkk;
