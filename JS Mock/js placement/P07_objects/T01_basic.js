@@ -12,4 +12,4 @@ let obj2=new Object();
 obj2.name="ansh"
 obj2.city="pune"
 
-console.log(obj2.name)
+console.log(obj2.name)  
