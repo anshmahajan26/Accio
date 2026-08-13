@@ -1,22 +1,33 @@
-import { useState } from 'react';
-import './App.css'
-import Footer from './component/Footer'
-import Header from './component/Header'
-import Search from './component/Search'
-import WeatherCard from './component/WeatherCard'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Footer from './component/Footer';
+import Header from './component/Header';
+import Search from './component/Search';
+import WeatherPage from './component/WeatherPage';
 
 function App() {
-  const [weatherDetails, setWeatherDetails] = useState(null);
-
   return (
-    <>
-      <Header/>
-      <Search setWeatherDetails={setWeatherDetails}/>
-      {weatherDetails && <WeatherCard weatherDetails={weatherDetails}/>}
-      
-      <Footer/>
-    </>
-  )
+    <Router>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={<Search />}
+        />
+        <Route
+          path="/weather/:cityName"
+          element={
+            <>
+              <Search />
+              <WeatherPage />
+            </>
+          }
+        />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;
