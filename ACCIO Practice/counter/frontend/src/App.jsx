@@ -1,9 +1,14 @@
 import { useState } from 'react'
-import axios from "axios";
+import axios from "axios"
 function App() {
   const [count,setCount]= useState(0);
-  const inc = (()=>{
-    setCount(count+1);
+
+  const inc = (async ()=>{
+   const newCount = setCount(count+1);
+
+   await axios.post("http://localhost:8080/",{
+    count: newCount
+   });
   });
   const dec = (()=>{
     setCount(count-1);

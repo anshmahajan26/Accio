@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
+const cors = require("cors");
 
 //middelware to handle http request data
 app.use(express.json());
@@ -23,16 +24,17 @@ async function dbConnect(){
 }
 dbConnect();
 
-
 app.post("/",async (req,res)=>{
     const cdb = await Counter.create(req.body);
     res.send(cdb);
     
 });
+
 app.get("/history", async (req, res) => {
     const gdb = await Counter.find();
     res.send(gdb);
 });
+
 app.delete("/history/:id",async(req,res)=>{
     try{
         const id = req.params.id;
@@ -41,13 +43,12 @@ app.delete("/history/:id",async(req,res)=>{
             return res.status(404).send("Counter not found");
         }
           res.send("deleted");
-
     }catch(e){
         console.log(e);
-    }
-    
-   
+    }   
 });
+
+
 
 app.listen("8080",()=>{
     console.log("port is listening");
