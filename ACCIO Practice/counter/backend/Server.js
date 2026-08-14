@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 const cors = require("cors");
 
+app.use(cors());
+
 //middelware to handle http request data
 app.use(express.json());
 //mongoSchema
