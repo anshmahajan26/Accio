@@ -1,10 +1,15 @@
 import { useState } from "react"
+import axios from "axios";
 
 function App() {
 const [on, setOn]= useState(false);
 
-const handleButton= ()=>{
-  setOn(!on);
+const handleButton= async ()=>{
+  const res = !on
+  setOn(res);
+  await axios.post("http://localhost:8080/",{
+    toggle : res
+  });
 }
 let op = on;
   if(on==false){
@@ -12,6 +17,8 @@ let op = on;
   }else{
      op = "ONN";
   }
+
+
 
   return (
     <>
