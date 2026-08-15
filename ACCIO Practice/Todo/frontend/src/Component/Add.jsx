@@ -25,7 +25,7 @@ const handeSubmit = (e)=>{
 //! Delete button handler
 const onDel = (index)=>{
     setShow(show.filter((item, i)=>{
-        i !== index;
+       return i !== index;
     }));
 }
     return (
@@ -33,7 +33,7 @@ const onDel = (index)=>{
             <h1>ADD TASK</h1>
             <br></br>
             <form onSubmit={handeSubmit}>
-                <input type="text" name="task"  onChange={inputVal}></input>
+                <input type="text" name="task" value={task} onChange={inputVal}></input>
                 <button type="submit" >ADD TASK</button>
             </form>
             <br></br>
@@ -43,7 +43,7 @@ const onDel = (index)=>{
             <ul>{
                 show.map((item,index)=>(
                     <li key={index}>
-                        {item} <button onClick={onDel}>Delete</button>
+                        {item} <button onClick={()=>onDel(index)}>Delete</button>
                     </li>
                 ))
                 }</ul>
