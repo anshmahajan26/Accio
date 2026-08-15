@@ -1,15 +1,49 @@
 import React from "react"
-function Add() {
+import { useState } from "react";
 
+function Add() {
+//to handle task in input filed this hook is used
+const [task,setTask]= useState("");
+//this is store input field task and display using map
+const [show,setShow]= useState([]);
+
+//!input value handler
+const inputVal = (e)=>{
+    setTask(e.target.value);
+}
+//!form event handler
+const handeSubmit = (e)=>{
+    e.preventDefault();
+    
+    if(!task){
+        alert("put task in input field first");
+    }else{
+         setShow([...show,task]);
+        setTask("");
+    }
+    
+}
 
     return (
         <>
             <h1>ADD TASK</h1>
             <br></br>
-            <form>
-                <input type="text" name="task" value={task}></input>
-                <button>ADD TASK</button>
+            <form onSubmit={handeSubmit}>
+                <input type="text" name="task"  onChange={inputVal}></input>
+                <button type="submit" >ADD TASK</button>
             </form>
+            <br></br>
+             <br></br>
+              <br></br>
+            <h1>TASK TO COMPLETE</h1>
+            <ul>{
+                show.map((item,index)=>(
+                    <li key={index}>
+                        {item}
+                    </li>
+                ))
+                }</ul>
+             
 
         </>
     )
