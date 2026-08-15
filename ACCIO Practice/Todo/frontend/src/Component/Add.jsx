@@ -11,7 +11,7 @@ const [show,setShow]= useState([]);
 const inputVal = (e)=>{
     setTask(e.target.value);
 }
-//!form event handler
+//!form event handler and submit button handler.
 const handeSubmit = (e)=>{
     e.preventDefault();
     
@@ -20,10 +20,14 @@ const handeSubmit = (e)=>{
     }else{
          setShow([...show,task]);
         setTask("");
-    }
-    
+    } 
 }
-
+//! Delete button handler
+const onDel = (index)=>{
+    setShow(show.filter((item, i)=>{
+        i !== index;
+    }));
+}
     return (
         <>
             <h1>ADD TASK</h1>
@@ -39,7 +43,7 @@ const handeSubmit = (e)=>{
             <ul>{
                 show.map((item,index)=>(
                     <li key={index}>
-                        {item}
+                        {item} <button onClick={onDel}>Delete</button>
                     </li>
                 ))
                 }</ul>
