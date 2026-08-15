@@ -34,6 +34,7 @@ app.post("/", async (req,res)=>{
 
 app.get("/history", async(req,res)=>{
     const hdb = await Toggle.find();
+    
      res.send(hdb);
 });
 
