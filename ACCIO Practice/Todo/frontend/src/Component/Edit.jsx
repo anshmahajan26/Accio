@@ -34,7 +34,7 @@ const [edit, setEdit]= useState(task);
     return(
         <>
         <h1>EDIT THE TASK</h1>
-        <input type="text" name="taskedit" onChange={handleinput}></input>
+        <input type="text" name="taskedit" value={task} onChange={handleinput}></input>
         <button onClick={handleEdit}>Edit</button>
         </>
     )
