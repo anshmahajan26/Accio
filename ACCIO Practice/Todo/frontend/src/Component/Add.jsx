@@ -1,5 +1,7 @@
 import React from "react"
 import { useState } from "react";
+import Edit from "../Component/Edit";
+import {Link} from "react-router-dom";
 
 function Add() {
     //to handle task in input filed this hook is used
@@ -44,7 +46,9 @@ function Add() {
                 show.map((item, index) => (
                     <li key={index}>
                         {item} <button onClick={() => onDel(index)}>Delete</button>
+                        <Link to = "/Edit">
                         <button>Edit</button>
+                        </Link>
                     </li>
                 ))
             }</ul>
