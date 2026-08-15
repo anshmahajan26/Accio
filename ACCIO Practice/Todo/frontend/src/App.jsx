@@ -7,15 +7,25 @@ import Edit from "./Component/Edit";
 
 
 function App() {
-  
+  //this is store input field task and display using map
+  //!taken from add.jsx
+  const [show, setShow] = useState([]);
+
 
   return (
     
     <BrowserRouter>
     <Routes>
 
-     <Route path="/" element={<Add />} />
-     <Route path = "/Edit" element={<Edit />}/>
+     <Route path="/" element={<Add
+     show = {show}
+     setShow = {setShow}
+      />} />
+
+     <Route path = "/Edit" element={<Edit 
+     show = {show}
+     setShow = {setShow}
+     />}/>
     </Routes>
     </BrowserRouter>
     

@@ -1,13 +1,12 @@
 import React from "react"
 import { useState } from "react";
 import Edit from "../Component/Edit";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Add() {
+function Add({ show, setShow }) {
     //to handle task in input filed this hook is used
     const [task, setTask] = useState("");
-    //this is store input field task and display using map
-    const [show, setShow] = useState([]);
+
 
     //!input value handler
     const inputVal = (e) => {
@@ -46,8 +45,14 @@ function Add() {
                 show.map((item, index) => (
                     <li key={index}>
                         {item} <button onClick={() => onDel(index)}>Delete</button>
-                        <Link to = "/Edit">
-                        <button>Edit</button>
+                        <Link to="/Edit" state={
+                            {//!here to send current task which have to edit so 
+                            //! this information send to edit
+                                task: item,
+                                index: index
+                            }
+                        }>
+                            <button>Edit</button>
                         </Link>
                     </li>
                 ))
