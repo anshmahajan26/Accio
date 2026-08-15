@@ -15,9 +15,10 @@ function Edit({show,setShow}){
 //*--------------------------------------------------------
 
 const [edit, setEdit]= useState(task);
-    //!handle edit input
+    //* handle input field using state
     const handleinput = (e)=>{
         setEdit(e.target.value);
+
     }
     const handleEdit = ()=>{
         //* previous array open using spread operator in updatedVal
@@ -28,13 +29,14 @@ const [edit, setEdit]= useState(task);
         setShow(updatedVal);
         //to return to home page.
         navigation("/");
+        
     }
 
 
     return(
         <>
         <h1>EDIT THE TASK</h1>
-        <input type="text" name="taskedit" value={task} onChange={handleinput}></input>
+        <input type="text" name="taskedit" value={edit} onChange={handleinput}></input>
         <button onClick={handleEdit}>Edit</button>
         </>
     )

@@ -19,7 +19,7 @@ function Add({ show, setShow }) {
         if (!task) {
             alert("put task in input field first");
         } else {
-            setShow([...show, task]);
+            setShow([ task, ...show ]);
             setTask("");
         }
     }
