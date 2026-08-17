@@ -1,8 +1,10 @@
 import React from "react"
 import { useState } from "react";
+import { useEffect } from "react";
 import Edit from "../Component/Edit";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 function Add({ show, setShow }) {
     //to handle task in input filed this hook is used
     const [task, setTask] = useState("");
@@ -27,11 +29,21 @@ function Add({ show, setShow }) {
         }
     }
     //! Delete button handler
-    const onDel = (index) => {
+    const onDel = async (id) => {
+        let DelTask =await axios.delete(`http://localhost:8080/${id}`) 
         setShow(show.filter((item, i) => {
-            return i !== index;
+            return item._id !==id ;
         }));
     }
+    //*useEfffect to fetch all task 
+    useEffect(()=>{
+        const getTask = async ()=>{
+            const response = await axios.get("http://localhost:8080/");
+            setShow(response.data);
+        }
+        getTask();
+      
+    },[])
     return (
         <>
             <h1>ADD TASK</h1>
@@ -45,9 +57,9 @@ function Add({ show, setShow }) {
             <br></br>
             <h1>TASK TO COMPLETE</h1>
             <ul>{
-                show.map((item) => (
+                show.map((item,index) => (
                     <li key={item._id}>
-                        {item.task} <button onClick={() => onDel(index)}>Delete</button>
+                        {item.task} <button onClick={() => onDel(item._id)}>Delete</button>
                         <Link to="/Edit" state={
                             {//!here to send current task which have to edit so 
                             //! this information send to edit
