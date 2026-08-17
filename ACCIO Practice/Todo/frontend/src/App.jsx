@@ -4,7 +4,7 @@ import axios from "axios"
 import Add from "./Component/Add"
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Edit from "./Component/Edit";
-import axios from "axios";
+
 
 function App() {
   //this is store input field task and display using map
