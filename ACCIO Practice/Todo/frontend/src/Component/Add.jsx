@@ -13,13 +13,16 @@ function Add({ show, setShow }) {
         setTask(e.target.value);
     }
     //!form event handler and submit button handler.
-    const handeSubmit = (e) => {
+    const handeSubmit = async (e) => {
         e.preventDefault();
 
         if (!task) {
             alert("put task in input field first");
         } else {
-            setShow([ task, ...show ]);
+            let response = await axios.post("http://localhost:8080/",{
+                task:task
+            });
+            setShow([response.data, ...show ]);
             setTask("");
         }
     }
@@ -42,9 +45,9 @@ function Add({ show, setShow }) {
             <br></br>
             <h1>TASK TO COMPLETE</h1>
             <ul>{
-                show.map((item, index) => (
-                    <li key={index}>
-                        {item} <button onClick={() => onDel(index)}>Delete</button>
+                show.map((item) => (
+                    <li key={item._id}>
+                        {item.task} <button onClick={() => onDel(index)}>Delete</button>
                         <Link to="/Edit" state={
                             {//!here to send current task which have to edit so 
                             //! this information send to edit
