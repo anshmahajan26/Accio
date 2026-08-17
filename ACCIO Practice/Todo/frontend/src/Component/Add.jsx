@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react";
 import Edit from "../Component/Edit";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 function Add({ show, setShow }) {
     //to handle task in input filed this hook is used
     const [task, setTask] = useState("");
