@@ -5,10 +5,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const navigate = useNavigate();
-    const [user, setUser] = useState({
-        email: "",
-        password: ""
-    });
+    const [user, setUser] = useState([]);
     const setEm = (event) => {
         setEmail(event.target.value);
     }
@@ -17,13 +14,15 @@ function Login() {
     }
     const handlesubmit = (e) => {
         e.preventDefault();
-        setUser({
+        setUser([
+             ...user,{
             email: email,
             password: pass
-        });
+             
+        }]);
         // console.log(user);
-        
-        navigate("/Show");
+
+       // navigate("/Show");
 
 
     }
@@ -38,6 +37,12 @@ function Login() {
 
                 <button type="submit">submit</button>
             </form>
+            {user.map((user, index) => (
+                <div key={index}>
+                    <h3>Email: {user.email}</h3>
+                    <h3>Password: {user.password}</h3>
+                </div>
+            ))}
         </>
     )
 }
