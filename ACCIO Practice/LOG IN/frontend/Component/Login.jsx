@@ -1,5 +1,13 @@
-
+import { useState } from "react"
 function Login(){
+    const [email, setEmail]= useState("");
+    const [ pass, setPass]= useState("");
+   const[user,setUser]= useState({
+    email:"",
+    password:""
+   });
+
+
     return(
         <>
         <form method="post" onSubmit={}>
