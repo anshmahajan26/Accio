@@ -9,7 +9,7 @@ function Login(){
    const setEm=(event)=>{
     setEmail(event.target.value);
    }
-   const setPass=(event)=>{
+   const setPasss=(event)=>{
     setPass(event.target.value);
    }
 const handlesubmit=(e)=>{
@@ -18,17 +18,19 @@ const handlesubmit=(e)=>{
         email:email,
         password:pass
     });
+    console.log(user);
 }
 
     return(
         <>
-        <form method="post" onSubmit={}>
+        <form method="post" onSubmit={handlesubmit}>
             <label htmlFor="">email</label>
             <input type="text" value={email} name="email" onChange={setEm}></input>
             <label>Passoword</label>
-            <input type="password" value={pass} name="password" onChange={setPass}></input>
+            <input type="password" value={pass} name="password" onChange={setPasss}></input>
             <button type="submit">submit</button>
         </form>
         </>
     )
 }
+export default Login;
