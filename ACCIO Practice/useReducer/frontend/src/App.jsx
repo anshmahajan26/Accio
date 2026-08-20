@@ -10,6 +10,9 @@ function reducer(state, action) {
 
   if (action.type === "INCREMENT") {
     return state + 1;
+    //return for commit on;y
+
+    
   }
 
   if (action.type === "DECREMENT") {
