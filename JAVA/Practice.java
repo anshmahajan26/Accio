@@ -1,6 +1,6 @@
 //!check Pos or neg
-class CheckPositive{
-    function check(){
+ class Practice{
+   public void check(){
         int num = 10;
         if(num>=0){
             System.out.println("postive");
@@ -8,7 +8,6 @@ class CheckPositive{
             System.out.println("Negative");
         }
     }
-    public static void main (String args[]){
-        check();
-    }
+
+    
 }
