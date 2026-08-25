@@ -37,6 +37,16 @@ app.post("/editor", async (req, res) => {
   res.json(data);
 });
 
+app.delete("/editor", async (req, res) => {
+
+  const data = await Editor.findOneAndDelete();
+
+  res.json({
+    message: "Data deleted successfully",
+    data: data
+  });
+
+});
 
 
 
