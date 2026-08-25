@@ -8,7 +8,10 @@ const user =  new mongoose.Schema({
     Input: String,
     History: [String],
     Future:[String]
-})
+});
+
+const User = mongoose.model("User",user);
+
 
 
 
