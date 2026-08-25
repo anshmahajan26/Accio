@@ -13,7 +13,13 @@ const user =  new mongoose.Schema({
 const User = mongoose.model("User",user);
 
 
+app.get("/editor", async (req, res) => {
 
+  const data = await User.findOne();
+
+  res.json(data);
+
+});
 
 
 
