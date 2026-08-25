@@ -4,7 +4,11 @@ const cors = require ("cors");
 
 app.use(express.json());
 
-
+const user =  new mongoose.Schema({
+    Input: String,
+    History: [String],
+    Future:[String]
+})
 
 
 
