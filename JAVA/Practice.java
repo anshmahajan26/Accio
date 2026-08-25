@@ -1,5 +1,5 @@
 //!check Pos or neg
- class Practice{
+ public class Practice{
    public void check(){
         int num = 10;
         if(num>=0){
