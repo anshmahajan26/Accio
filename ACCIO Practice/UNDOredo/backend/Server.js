@@ -16,9 +16,8 @@ const User = mongoose.model("User",user);
 app.get("/editor", async (req, res) => {
 
   const data = await User.findOne();
-
+//get the data here.
   res.json(data);
-
 });
 
 
