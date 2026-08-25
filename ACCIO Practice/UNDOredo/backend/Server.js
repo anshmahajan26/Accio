@@ -22,6 +22,20 @@ app.get("/editor", async (req, res) => {
 
 
 
+app.post("/editor", async (req, res) => {
+
+  const { input, history, future } = req.body;
+
+  const data = new Editor({
+    input: input,
+    history: history,
+    future: future
+  });
+
+  await data.save();
+
+  res.json(data);
+});
 
 
 
