@@ -24,7 +24,14 @@ app.post("/",auth,async(req,res)=>{
         console.log("Server error");
     }
 });
-
+app.get("/", async(req,res)=>{
+    try{
+        const gdb = await Logger.find();
+        res.send(gdb);
+    }catch(e){
+        console.log("Server error");
+    }
+});
 app.listen("8080",()=>{
     console.log("you are on port 8080");
 })
