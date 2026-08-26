@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import Show from "./Show";
+import { useEffect } from "react";
+import axios from "axios";
+
 function Login() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
@@ -12,20 +14,36 @@ function Login() {
     const setPasss = (event) => {
         setPass(event.target.value);
     }
-    const handlesubmit = (e) => {
+    const handlesubmit = async (e) => {
         e.preventDefault();
-        setUser([
-             ...user,{
+        await axios.post("http://localhost:8080/", {
             email: email,
             password: pass
-             
-        }]);
+        });
+        setUser([
+            ...user, {
+                email: email,
+                password: pass
+
+            }]);
         // console.log(user);
 
-       // navigate("/Show");
-
-
+        // navigate("/Show");
     }
+    const onDel = async (id) => {
+        let DelTask = await axios.delete(`http://localhost:8080/${id}`)
+        setUser(user.filter((item, i) => {
+            return item._id !== id;
+        }));
+    }
+    useEffect(() => {
+        const getTask = async () => {
+            const response = await axios.get("http://localhost:8080/");
+            setUser(response.data);
+        }
+        getTask();
+
+    }, [])
 
     return (
         <>
@@ -37,11 +55,11 @@ function Login() {
 
                 <button type="submit">submit</button>
             </form>
-            {user.map((user, index) => (
-                <div key={index}>
-                    <h3>Email: {user.email}</h3>
-                    <h3>Password: {user.password}</h3>
-                    <button>Delete</button>
+            {user.map((item, _id) => (
+                <div key={item._id}>
+                    <h3>Email: {item.email}</h3>
+                    <h3>Password: {item.password}</h3>
+                    <button onClick={()=>{onDel(item._id)}}>Delete</button>
                 </div>
             ))}
         </>
