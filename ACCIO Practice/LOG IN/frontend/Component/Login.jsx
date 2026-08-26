@@ -41,6 +41,7 @@ function Login() {
                 <div key={index}>
                     <h3>Email: {user.email}</h3>
                     <h3>Password: {user.password}</h3>
+                    <button>Delete</button>
                 </div>
             ))}
         </>
