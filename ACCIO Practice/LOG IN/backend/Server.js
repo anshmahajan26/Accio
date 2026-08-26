@@ -5,6 +5,16 @@ const cors = require("cors");
 
 app.use(express.json());
 
+const connectDb=async()=>{
+    try{
+       await mongoose.connect("mongodb://localhost:27017/toggle");
+       console.log("connected DB");
+    }catch(e){
+        console.log(e);
+    }
+}
+connectDb();
+
 const user = new mongoose.Schema({
     username:String,
     password: String
