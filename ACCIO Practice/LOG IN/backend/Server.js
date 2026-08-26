@@ -42,10 +42,10 @@ app.get("/", async(req,res)=>{
         console.log("Server error");
     }
 });
-app.delete("/:id",async()=>{
+app.delete("/:id",async(req,res)=>{
     try{
-        const id = req.param;
-        const ddb = await Logger.findByIdAndDelete(id);
+        
+       const ddb = await Logger.findByIdAndDelete(req.params.id);
         res.send("task deleted");
     }catch(e){
             console.log("error in deleteing entry");
