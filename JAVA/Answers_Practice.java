@@ -28,6 +28,8 @@
         System.out.println(o.sumofDigi(122));
         //Q9
         System.out.println(o.Rev(123));
+        //Q10
+        System.out.println(o.Palindrom(121));
 
 
         //Practice o2 = new Practice();

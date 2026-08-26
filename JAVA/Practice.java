@@ -108,5 +108,17 @@
         return rev;
     }
 
+    public boolean Palindrom(int num){
+        if(Rev(num)==num){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean PalindromStr(String str){
+        
+    }
+
 
 }
