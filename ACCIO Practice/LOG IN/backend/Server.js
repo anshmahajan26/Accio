@@ -11,6 +11,10 @@ const user = new mongoose.Schema({
 });
 const Logger = mongoose.model("Logger",user);
 
+const auth = (req,res,next)=>{
+    console.log("middleware running");
+}
+
 app.post("/",async(req,res)=>{
     try{
     const udb =await Logger.create(req.body);
