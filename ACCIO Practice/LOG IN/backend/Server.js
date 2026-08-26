@@ -42,6 +42,15 @@ app.get("/", async(req,res)=>{
         console.log("Server error");
     }
 });
+app.delete("/:id",async()=>{
+    try{
+        const id = req.param;
+        const ddb = await Logger.findByIdAndDelete(id);
+        res.send("task deleted");
+    }catch(e){
+            console.log("error in deleteing entry");
+    }
+});
 app.listen("8080",()=>{
     console.log("you are on port 8080");
 })
