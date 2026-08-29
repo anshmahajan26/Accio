@@ -97,7 +97,7 @@
         }
         return sum;
     }
-
+//Rev digit directly 
     public int Rev(int num){
         int rev = 0, rem;
         while(num>0){
