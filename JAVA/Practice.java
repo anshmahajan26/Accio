@@ -107,7 +107,7 @@
         }
         return rev;
     }
-
+//find palindrom of number digit
     public boolean Palindrom(int num){
         if(Rev(num)==num){
             return true;
