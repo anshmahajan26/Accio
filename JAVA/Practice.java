@@ -115,7 +115,7 @@
             return false;
         }
     }
-
+//find palindorm of String
     public boolean PalindromStr(String str){
         
     }
