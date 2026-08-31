@@ -11,14 +11,20 @@ function New(){
         setHistory([...history, input]);
 
     }
-    const handleUndo = ()=>{
-        const prevVal = history[history.length -1];
-        setFuture(input,...future);
+    const handleUndu = ()=>{
+        const prevVal = history[History.length-1];
+        setInput(prevVal);
+         setHistory(history.slice(0, -1));
+         
     }
+   
 
     return(
         <>
-        <input type="text" ></input>
+        <input type="text" onChange={handleInput} value={input}></input>
+        <button onClick={handleUndu} >Undo</button>
+        <button >Redu</button>
+
         </>
     )
 }
