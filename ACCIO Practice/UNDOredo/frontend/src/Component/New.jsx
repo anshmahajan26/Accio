@@ -14,7 +14,9 @@ function New(){
     const handleUndu = ()=>{
         const prevVal = history[History.length-1];
         setInput(prevVal);
-         setHistory(history.slice(0, -1));
+        setHistory(history.slice(0, -1));
+        setFuture(...future, input);
+        
          
     }
    
