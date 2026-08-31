@@ -1,5 +1,6 @@
 //this is undo redo
 import { useState } from "react";
+import New from "./Component/New";
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     const newValue = event.target.value;
 
     // Store current value in history
-    setHistory([...history, newValue]);
+    setHistory([...history, input]);
 
     // Set new value
     setInput(newValue);
@@ -87,6 +88,7 @@ function App() {
       </button>
 
       <h3>Current: {input}</h3>
+      <New />
     </>
   );
 }
