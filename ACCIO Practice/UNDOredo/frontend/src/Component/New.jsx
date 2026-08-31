@@ -9,15 +9,24 @@ function New(){
         const newVal = event.target.value;
         setInput(newVal);
         setHistory([...history, input]);
+        setFuture([]);
 
     }
     const handleUndu = ()=>{
-        const prevVal = history[History.length-1];
+        const prevVal = history[history.length-1];
         setInput(prevVal);
         setHistory(history.slice(0, -1));
-        setFuture(...future, input);
+        setFuture([...future, input]);
+        console.log(input);
+    }
+    const handleRedu = ()=>{
+        let a =0;
+        const nxtVal = future[a];
+        setInput(nxtVal);
+        a++;
+        console.log(input);
+          
         
-         
     }
    
 
@@ -25,7 +34,9 @@ function New(){
         <>
         <input type="text" onChange={handleInput} value={input}></input>
         <button onClick={handleUndu} >Undo</button>
-        <button >Redu</button>
+        <button onClick={handleRedu}>Redu</button>
+        <h1>{input}</h1>
+        
 
         </>
     )
