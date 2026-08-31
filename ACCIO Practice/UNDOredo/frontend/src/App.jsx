@@ -14,7 +14,7 @@ function App() {
     const newValue = event.target.value;
 
     // Store current value in history
-    setHistory([...history, input]);
+    setHistory([...history, newValue]);
 
     // Set new value
     setInput(newValue);
