@@ -20,10 +20,12 @@ function New(){
         console.log(input);
     }
     const handleRedu = ()=>{
-        let a =0;
-        const nxtVal = future[a];
+        
+        const nxtVal = future[0];
+
         setInput(nxtVal);
-        a++;
+        setHistory([...history, input]);
+        setFuture(future.slice(1));
         console.log(input);
           
         
