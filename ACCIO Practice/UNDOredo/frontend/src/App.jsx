@@ -44,6 +44,7 @@ function App() {
 
     // Remove last history value
     setHistory(history.slice(0, -1));
+   
   };
 
 

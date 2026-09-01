@@ -20,17 +20,12 @@ function New(){
         console.log(input);
     }
     const handleRedu = ()=>{
-        
         const nxtVal = future[0];
-
         setInput(nxtVal);
         setHistory([...history, input]);
         setFuture(future.slice(1));
-        console.log(input);
-          
-        
+        console.log(input);         
     }
-   
 
     return(
         <>
@@ -38,8 +33,6 @@ function New(){
         <button onClick={handleUndu} >Undo</button>
         <button onClick={handleRedu}>Redu</button>
         <h1>{input}</h1>
-        
-
         </>
     )
 }
