@@ -15,7 +15,7 @@ const connectDb=async()=>{
     }
 }
 connectDb();
-
+//building schema for mongo 
 const user = new mongoose.Schema({
     username:String,
     password: String
