@@ -20,6 +20,7 @@ const user = new mongoose.Schema({
     username:String,
     password: String
 });
+//using schema as model
 const Logger = mongoose.model("Logger",user);
 
 const auth = (req,res,next)=>{
