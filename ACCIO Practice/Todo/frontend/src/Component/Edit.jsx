@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 function Edit({show,setShow}){
 
-//*here is logic to fetch the data from link to use here.
+//*here is logic to fetch the data from link to use here...
     const location = useLocation();
     const navigation = useNavigate();
     // we are using state from link
