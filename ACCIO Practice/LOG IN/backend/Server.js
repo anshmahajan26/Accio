@@ -7,6 +7,7 @@ app.use(express.json());
 app.use(cors());
 const connectDb=async()=>{
     try{
+        //cojnnecting db
        await mongoose.connect("mongodb://localhost:27017/toggle");
        console.log("connected DB");
     }catch(e){
