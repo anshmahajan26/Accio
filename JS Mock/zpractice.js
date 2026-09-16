@@ -132,6 +132,16 @@ function moveZeroSwap(arr) {
     console.log(arr);
 }
 moveZero([1, 2, 0, 0, 4, 3]);
-
+ 
+function subArray(arr){
+   for(let i =0; i<arr.length-1; i++){
+      for(let j =1; j<arr.length; j++){
+         for(let k =i; k<=j; k++){
+            console.log(arr[k]);
+         }
+      }
+   }
+}
+threeSum();
 
 
