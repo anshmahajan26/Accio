@@ -144,4 +144,7 @@ function subArray(arr){
 }
 threeSum();
 
+function N(){
+   let a
+}
 
