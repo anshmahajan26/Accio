@@ -147,5 +147,7 @@ threeSum();
 function N(){
    let a;
    let b;
+
+   let c;
 }
 
