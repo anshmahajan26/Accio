@@ -22,7 +22,7 @@ function twoSumOptimized(){
 let arr=[1,2,4,7,8]
 let target=9;
 let map=new Map()
-for(let i=0;i<arr.length-1;i++){
+for(let i=0;i<arr.length-1;i++){ 
  let diff=target-arr[i]
  if(map.has(diff)){
     return [map.get(diff),i]
