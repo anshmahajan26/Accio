@@ -147,6 +147,7 @@ threeSum();
 function N(){
   let a;
   let b;
+  j
   let res = a+b;
 }
 
