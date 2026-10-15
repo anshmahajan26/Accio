@@ -13,6 +13,7 @@ const checkboxSlice = createSlice({
 
   reducers: {
     toggleAll: (state) => {
+      //it check does every state 
       const allChecked = state.every(
         (item) => item.checked
       );

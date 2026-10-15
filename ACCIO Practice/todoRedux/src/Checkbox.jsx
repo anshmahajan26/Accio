@@ -1,18 +1,12 @@
 
 import { useDispatch, useSelector } from "react-redux";
-import { toggleAll, toggleItem } from "./checkboxSlice";
+import { toggleAll, toggleItem } from "./checkboxSlice.js";
 
 function Checkbox() {
   const items = useSelector((state) => state.checkbox);
   const dispatch = useDispatch();
 
-  const allChecked =
-    items.length > 0 &&
-    items.every((item) => item.checked);
-
-  const selectedCount = items.filter(
-    (item) => item.checked
-  ).length;
+  const allChecked = items.every((item) => item.checked);
 
   return (
     <div>
@@ -41,10 +35,6 @@ function Checkbox() {
           </label>
         </div>
       ))}
-
-      <h3>
-        Selected: {selectedCount} / {items.length}
-      </h3>
     </div>
   );
 }
